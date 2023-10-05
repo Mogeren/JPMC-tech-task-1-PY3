@@ -19,7 +19,7 @@
 #  DEALINGS IN THE SOFTWARE.
 
 import urllib.request
-import time
+# import time
 import json
 import random
 
@@ -58,5 +58,5 @@ if __name__ == "__main__":
 		for quote in quotes:
 			stock, bid_price, ask_price, price = getDataPoint(quote)
 			print ("Quoted %s at (bid:%s, ask:%s, price:%s)" % (stock, bid_price, ask_price, price))
-
-		print ("Ratio %s" % (getRatio(price['ABC'], price['DEF'])))
+		ratio = str(getRatio(price['ABC'], price['DEF']))
+		print ("Ratio %s" % rati
