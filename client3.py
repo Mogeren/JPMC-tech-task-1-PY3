@@ -4,7 +4,7 @@
 #  copy of this software and associated documentation files (the "Software"),
 #  to deal in the Software without restriction, including without limitation
 #  the rights to use, copy, modify, merge, publish, distribute, sublicense,
-#  and/or sell copies of the Software, and to permit persons to whom the
+#  and/or sell copies ofgit the Software, and to permit persons to whom the
 #  Software is furnished to do so, subject to the following conditions:
 #
 #  The above copyright notice and this permission notice shall be included in
@@ -35,13 +35,10 @@ def getDataPoint(quote):
 	stock = quote['stock']
 	bid_price = float(quote['top_bid']['price'])
 	ask_price = float(quote['top_ask']['price'])
-	price = (bid_price+ask_price)/2
+	price = (bid_price+avg_price)/2
 	return stock, bid_price, ask_price, price
 
 def getRatio(price_a, price_b):
-	""" Get ratio of price_a and price_b """
-	""" ------------- Update this function ------------- """
-	""" Also create some unit tests for this function in client_test.py """
 	if (price_b == 0):
 		return
 	return price_a/price_b
@@ -59,4 +56,4 @@ if __name__ == "__main__":
 			stock, bid_price, ask_price, price = getDataPoint(quote)
 			print ("Quoted %s at (bid:%s, ask:%s, price:%s)" % (stock, bid_price, ask_price, price))
 		ratio = str(getRatio(price['ABC'], price['DEF']))
-		print ("Ratio %s" % rati
+		print ("Ratio %s" % getRatio(price['ABC'], price['DEF']))
